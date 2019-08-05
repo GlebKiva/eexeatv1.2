@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Exeat-Forms Generator</title>
+   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+   <style>
+      /* Базовые стили формы */
+      form{
+        margin:0 auto;
+        max-width:95%;
+        box-sizing:border-box;
+        padding:40px;
+        border-radius:5px;
+        background:RGBA(255,255,255,1);
+        -webkit-box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);
+        box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);
+      }
+      /* Стили полей ввода */
+      .textbox{
+        height:50px;
+        width:100%;
+        border-radius:3px;
+        border:rgba(0,0,0,.3) 2px solid;
+        box-sizing:border-box;
+        font-family: 'Open Sans', sans-serif;
+        font-size:18px;
+        padding:10px;
+        margin-bottom:30px;
+      }
+      .message:focus,
+      .textbox:focus{
+        outline:none;
+         border:rgba(24,149,215,1) 2px solid;
+         color:rgba(24,149,215,1);
+      }
+      /* Стили текстового поля */
+      .message{
+          background: rgba(255, 255, 255, 0.4);
+          width:100%;
+          height: 120px;
+          border:rgba(0,0,0,.3) 2px solid;
+          box-sizing:border-box;
+          -moz-border-radius: 3px;
+          font-size:18px;
+          font-family: 'Open Sans', sans-serif;
+          -webkit-border-radius: 3px;
+          border-radius: 3px;
+          display:block;
+          padding:10px;
+          margin-bottom:30px;
+          overflow:hidden;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        width: 100%;
+        padding: 0;
+        overflow: hidden;
+        background-color:  rgb(64,199,129);
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover:not(.active) {
+        background-color: rgb(44,179,109);
+      }
+
+      .active {
+        background-color: rgb(44,179,109);
+      }
+      </style>
+   <script>
+        function restoreData() {
+            document.getElementById("name").value = window.localStorage.getItem("name");
+            document.getElementById("surname").value = window.localStorage.getItem("surname");
+            document.getElementById("dateout").value = window.localStorage.getItem("dateout");
+            document.getElementById("datein").value = window.localStorage.getItem("datein");
+            document.getElementById("timeout").value = window.localStorage.getItem("timeout");
+            document.getElementById("timein").value = window.localStorage.getItem("timein");
+            document.getElementById("email").value = window.localStorage.getItem("email");
+            document.getElementById("tel").value = window.localStorage.getItem("tel");
+            document.getElementById("adress").value = window.localStorage.getItem("adress");
+            document.getElementById("howgo").value = window.localStorage.getItem("howgo");
+            document.getElementById("nameop").value = window.localStorage.getItem("nameop");
+            document.getElementById("grade").value = window.localStorage.getItem("grade");
+            document.getElementById("reason").value = window.localStorage.getItem("reason");
+            document.getElementById("house").value = window.localStorage.getItem("house");
+            makeLink();
+        }
+        function saveData() {
+            window.localStorage.setItem("name", document.getElementById('name').value);
+            window.localStorage.setItem("surname", document.getElementById('surname').value);
+            window.localStorage.setItem("dateout", document.getElementById('dateout').value);
+            window.localStorage.setItem("datein", document.getElementById('datein').value);
+            window.localStorage.setItem("timeout", document.getElementById('timeout').value);
+            window.localStorage.setItem("timein", document.getElementById('timein').value);
+            window.localStorage.setItem("email", document.getElementById('email').value);
+            window.localStorage.setItem("tel", document.getElementById('tel').value);
+            window.localStorage.setItem("adress", document.getElementById('adress').value);
+            window.localStorage.setItem("howgo", document.getElementById('howgo').value);
+            window.localStorage.setItem("nameop", document.getElementById('nameop').value);
+            window.localStorage.setItem("grade", document.getElementById('grade').value);
+            window.localStorage.setItem("reason", document.getElementById('reason').value);
+            window.localStorage.setItem("house", document.getElementById('house').value);
+        }
+        function makeLink() {
+            const link = "mailto:boarding@letovo.ru?subject=Holiday Exeat-Form of " + document.getElementById('name').value + " " + document.getElementById('surname').value + "&body=Name: " + document.getElementById('name').value + "%0ASurname: " + document.getElementById('surname').value + "%0AGrade: " + document.getElementById('grade').value + "%0AHouse: " + document.getElementById('house').value + "%0ADate of departure: " + document.getElementById('dateout').value + "%0ADeparture time: " + document.getElementById('timeout').value + "%0ADate of return: " + document.getElementById('datein').value + "%0AReturn time: " + document.getElementById('timein').value + "%0ATransport: " + document.getElementById('howgo').value + "%0AReason of exeat: " + document.getElementById('reason').value + "%0AAdress during the exeat: " + document.getElementById('adress').value + "%0AAdult's name: " + document.getElementById('nameop').value + "%0AAdult's phone number: " + document.getElementById('tel').value + "%0AAdult's E-mail: " + document.getElementById('email').value;
+            document.getElementById('myLink').setAttribute('href', link);
+        }
+   </script>
+</head>
+<body onload="restoreData()">
+
+   <ul style="position: fixed; margin-left: -10px; margin-right: -10px; margin-top: -80px;">
+     <li><a href="menue.html"><img src="eng.png"></a></li>
+     <li><a href="menu.html">Главная</a></li>
+     <li><a href="exeats1.html">Генератор Форм на Выходные</a></li>
+     <li><a class="active" href="exeats2.html">Генератор Форм на Каникулы</a></li>
+     <li><a href="exeats3.html">Генератор Форм для Заселения</a></li>
+     <li><a href="questions.html">Информация</a></li>
+   </ul>
+
+   <a href="https://vk.com/feironox5" style="text-decoration:none; color:white; background: rgb(64,199,129); top: 90%; position: fixed; right: 5%;"> Глеб Кива </a>
+   <div style="margin-top: 77.88px;">
+      <form>
+             <h1 style="color: rgb(64,199,129);">Генератор Форм на Каникулы</h1>
+              <h3 style="color: rgb(44,179,109); margin-top: 2%">Введите Ваши имя/фамилию:</h3>
+             <input onchange="makeLink()" id="name" placeholder="Введите Ваше имя" class="textbox"  />
+             <input onchange="makeLink()" id="surname" placeholder="Введите Вашу фамилию" class="textbox"  />
+              <h3 style="color: rgb(44,179,109);">Выберите ваш класс:</h3>
+              <select id="grade" onchange="makeLink()" class="textbox" style="background: white;" required>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+              </select>
+              <h3 style="color: rgb(44,179,109);">Выберите номер Вашего дома:</h3>
+              <select id="house" onchange="makeLink()" class="textbox" style="background: white;" required>
+                  <option value="House 1">Дом 1</option>
+                  <option value="House 2">Дом 2</option>
+                  <option value="House 3">Дом 3</option>
+                  <option value="House 4">Дом 4</option>
+                  <option value="Day house">Дневной пансион</option>
+             </select>
+          <h3 style="color: rgb(44,179,109);">Введите Время/Дату выхода:</h3>
+         <input type="date" onchange="makeLink()" id="dateout" class="textbox"  />
+         <input type="time" onchange="makeLink()" id="timeout" class="textbox"  />
+          <h3 style="color: rgb(44,179,109);">Введите Время/Дату приезда:</h3>
+         <input type="date" onchange="makeLink()" id="datein" class="textbox"  />
+         <input type="time" onchange="makeLink()" id="timein" class="textbox"  />
+          <h3 style="color: rgb(44,179,109);">Введите способ поездки домой:</h3>
+         <select id="howgo" onchange="makeLink()" class="textbox" style="background: white;" required>
+            <option value="School bus">Школьный автобус</option>
+            <option value="City bus">Городской автобус</option>
+            <option value="Adult's venicle">ТС доверенного лица</option>
+            <option value="Other">Другое</option>
+         </select>
+          <h3 style="color: rgb(44,179,109);">Другое:</h3>
+          <input type="text" onchange="makeLink()" id="reason" placeholder="Введите причину выхода" class="textbox"  />
+         <input onchange="makeLink()" id="adress" placeholder="Введите адрес места пребывания" class="textbox"  />
+         <input type="text" onchange="makeLink()" id="nameop" placeholder="Введите имя ответственного лица" class="textbox"/>
+         <input type="tel" onchange="makeLink()" id="tel" placeholder="Введите номер телефона ответственного лица" class="textbox"  />
+         <input type="email" onchange="makeLink()" id="email" placeholder="Введите e-mail ответственного лица" class="textbox"  />
+
+         <a onclick="saveData()" id="myLink" style="font-weight: 700; color: white; text-decoration: none; padding: .8em 1em calc(.8em + 3px); border-radius: 3px; background: rgb(64,199,129);">Генерировать Exeat-форму</a>
+         <a href="#" onclick="saveData()" style="font-weight: 700; color: white; text-decoration: none; padding: .8em 1em calc(.8em + 3px); border-radius: 3px; background: rgb(64,199,129);">Сохранить</a>
+      </form>
+   </div>
+   </body>
+</html>
